@@ -22,11 +22,15 @@ Pizza.prototype.calculateSizePrice = function () {
 }
 
 Pizza.prototype.calculateToppingPrice = function () {
-    let price;
-    for (toppings of this.toppings) {
+    let price = 0;
+
+    for (element of this.toppings) {
         price += 2;
     }
+    console.log(price)
+
     return price;
+
 };
 
 Pizza.prototype.pizzaPrice = function () {
@@ -41,8 +45,6 @@ let userPizza = new Pizza("", [])
 function getSize() {
     const chosenSize = document.querySelector("input[name='pizzaSize']:checked").value;
     userPizza.size = chosenSize;
-
-    console.log(userPizza.size)
 }
 
 
@@ -58,19 +60,6 @@ function showSizePrice() {
     sizePrice.append(sizePriceDisplay);
 }
 
-// function getToppings() {
-//     const toppingCheckboxes = document.querySelectorAll("input[type='checkbox']:checked");
-//     const userToppings = [];
-
-//     toppingCheckboxes.forEach(function (topping) {
-//         userToppings.push(topping.value);
-
-//     });
-
-//     userPizza.toppings = userToppings;
-
-//     console.log(userPizza.toppings);
-// }
 
 function getToppings() {
     const toppingChoice = document.querySelectorAll("input[type='checkbox']:checked");
@@ -79,8 +68,6 @@ function getToppings() {
     toppingChoice.forEach(function (topping) {
         userPizza.toppings.push(topping.value);
     });
-
-    console.log(userPizza.toppings);
 }
 
 function showToppingPrice() {
@@ -90,7 +77,7 @@ function showToppingPrice() {
     getToppings();
 
     toppingPrice.innerText = null;
-    toppingPriceDisplay.append("$" + userPizza.calculateToppingPrice());
+    toppingPriceDisplay.append("+ $" + userPizza.calculateToppingPrice());
     toppingPrice.append(toppingPriceDisplay);
 
 }

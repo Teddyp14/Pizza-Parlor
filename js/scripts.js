@@ -48,7 +48,7 @@ function showSizePrice() {
     const sizePrice = document.querySelector("div.sizePrice");
     const sizePriceDisplay = document.createElement("h3");
 
-    getSizePrice();
+    getSize();
 
     sizePrice.innerText = null;
     sizePriceDisplay.append("$" + userPizza.calculateSizePrice());
@@ -57,9 +57,21 @@ function showSizePrice() {
 
 function getToppings() {
     const toppingChoice = document.querySelectorAll("input.toppingInput");
+
+    toppingChoice.forEach((input) => {
+        userPizza.toppings.push(input);
+    });
 }
 
 function showToppingPrice() {
+    const toppingPrice = document.querySelector("div.toppingPrice");
+    const toppingPriceDisplay = document.createElement("h3");
+
+    getToppings();
+
+    toppingPrice.innerText = null;
+    toppingPriceDisplay.append("$" + userPizza.calculateToppingPrice());
+    toppingPrice.append(toppingPriceDisplay);
 
 }
 

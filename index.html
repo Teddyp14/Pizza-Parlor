@@ -15,41 +15,63 @@
 
     <h3>Size</h3>
     <form id="pizzaOrder">
-        <input type="radio" class="sizeInput" name="pizzaSize" value="personal">
-        <label for="personal">Personal</label>
-        <input type="radio" class="sizeInput" name="pizzaSize" value="medium">
-        <label for="medium">Medium</label>
-        <input type="radio" class="sizeInput" name="pizzaSize" value="large">
-        <label for="large">Large</label>
-        <input type="radio" class="sizeInput" name="pizzaSize" value="family">
-        <label for="family">Family</label>
+        <div class="label-container">
+            <input type="radio" class="sizeInput" name="pizzaSize" id="personal" value="personal">
+            <label for="personal">Personal</label>
+        </div>
+        <div class="label-container">
+            <input type="radio" class="sizeInput" name="pizzaSize" id="medium" value="medium">
+            <label for="medium">Medium</label>
+        </div>
+        <div class="label-container">
+            <input type="radio" class="sizeInput" name="pizzaSize" id="large" value="large">
+            <label for="large">Large</label>
+        </div>
+        <div class="label-container">
+            <input type="radio" class="sizeInput" name="pizzaSize" id="family" value="family">
+            <label for="family">Family</label>
+        </div>
 
         <h3>Toppings</h3>
 
-        <input type="checkbox" class="toppingInput" value="pepperoni">
-        <label for="topping1">Pepperoni</label>
-        <input type="checkbox" class="toppingInput" value="sausage">
-        <label for="topping2">Sausage</label>
-        <input type="checkbox" class="toppingInput" value="canadianBacon">
-        <label for="topping3">Canadian Bacon</label>
-        <input type="checkbox" class="toppingInput" value="anchovies">
-        <label for="topping4">Anchovies</label>
-        <input type="checkbox" class="toppingInput" value="peppers">
-        <label for="topping5">Peppers</label>
-        <input type="checkbox" class="toppingInput" value="mushrooms">
-        <label for="topping6">Mushrooms</label>
-        <input type="checkbox" class="toppingInput" value="olives">
-        <label for="topping7">Olives</label>
-        <input type="checkbox" class="toppingInput" value="onions">
-        <label for="topping8">Onions</label>
-        <input type="checkbox" class="toppingInput" value="pepperoni">
-        <label for="topping1">Pepperoni</label>
-        <button type="submit">Proceed to checkout!</button>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping1" value="pepperoni">
+            <label for="topping1">Pepperoni</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping2" value="sausage">
+            <label for="topping2">Sausage</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping3" value="canadianBacon">
+            <label for="topping3">Canadian Bacon</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping4" value="anchovies">
+            <label for="topping4">Anchovies</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping5" value="peppers">
+            <label for="topping5">Peppers</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping6" value="mushrooms">
+            <label for="topping6">Mushrooms</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping7" value="olives">
+            <label for="topping7">Olives</label>
+        </div>
+        <div class="label-container">
+            <input type="checkbox" class="toppingInput" id="topping8" value="onions">
+            <label for="topping8">Onions</label>
+        </div>
     </form>
-
-    <div class="sizePrice"></div>
-    <div class="toppingPrice"></div>
-    <div class="totalPrice"></div>
+    <div class="pricingInfo">
+        <div class="sizePrice"></div>
+        <div class="toppingPrice"></div>
+        <div class="totalPrice"></div>
+    </div>
 </body>
 
 </html>

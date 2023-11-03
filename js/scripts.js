@@ -82,7 +82,6 @@ function showToppingPrice() {
 }
 
 function showTotal() {
-    // event.preventDefault();
 
     const totalPrice = document.querySelector("div.totalPrice");
     const totalPriceDisplay = document.createElement("h3");
@@ -92,8 +91,13 @@ function showTotal() {
     totalPrice.append(totalPriceDisplay);
 }
 
+// function addToOrder() {
+//     event.preventDefault();
+
+
+// }
+
 window.addEventListener("load", function () {
-    document.querySelector("form#pizzaOrder").addEventListener("submit", showTotal);
 
     const sizeInputs = document.querySelectorAll("input.sizeInput");
     const toppingInputs = document.querySelectorAll("input.toppingInput");
@@ -106,6 +110,4 @@ window.addEventListener("load", function () {
         input.addEventListener("click", showToppingPrice);
     });
 });
-
-
 

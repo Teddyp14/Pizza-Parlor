@@ -91,11 +91,18 @@ function showTotal() {
     totalPrice.append(totalPriceDisplay);
 }
 
-// function addToOrder() {
-//     event.preventDefault();
+function addToOrder() {
+    event.preventDefault();
 
+    const totalOrder = document.querySelector("div#totalOrder");
+    const orderList = document.createElement("ul");
+    const orderListItem = document.createElement("li");
+    const userPizzaSize = userPizza.size.charAt(0).toUpperCase() + userPizza.size.slice(1);
 
-// }
+    orderListItem.append(userPizzaSize + " pizza with " + (userPizza.toppings).join(", "));
+    orderList.append(orderListItem);
+    totalOrder.append(orderList);
+}
 
 window.addEventListener("load", function () {
 
@@ -109,5 +116,7 @@ window.addEventListener("load", function () {
     toppingInputs.forEach((input) => {
         input.addEventListener("click", showToppingPrice);
     });
+
+    document.querySelector("form#pizzaOrder").addEventListener("submit", addToOrder);
 });
 

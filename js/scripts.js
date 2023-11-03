@@ -1,6 +1,6 @@
 //Business Logic
 
-function Pizza(toppings, size) {
+function Pizza(size, toppings) {
     this.size = size;
     this.toppings = toppings;
 }
@@ -33,9 +33,17 @@ Pizza.prototype.pizzaPrice = function () {
 
 
 //UI Logic
+let userPizza = new Pizza("", [])
+
 
 function showSizePrice() {
+    const chosenSize = document.querySelector("input[name='pizzaSize']:checked").value;
+    userPizza.size = chosenSize;
 
+    console.log(userPizza.size)
+
+    const sizePriceDisplay = document.createElement("h3");
+    sizePriceDisplay.append(userPizza.sizePrice());
 }
 
 function showToppingPrice() {
@@ -47,9 +55,16 @@ function showTotal() {
 }
 
 window.addEventListener("load", function () {
-    document.querySelector(".toppingInput").addEventListener("click", showToppingPrice);
-    document.querySelector(".sizeInput").addEventListener("click", showToppingPrice);
-    //     document.querySelector(".toppingInput").addEventListener("click", showToppingPrice);
+    const sizeInputs = document.querySelectorAll("input.sizeInput")
+    const toppingInputs = document.querySelectorAll("input.toppingInput")
+
+    sizeInputs.forEach((input) => {
+        input.addEventListener("click", showSizePrice);
+    });
+
+    toppingInputs.forEach((input) => {
+        input.addEventListener("click", showToppingPrice);
+    });
 });
 
 

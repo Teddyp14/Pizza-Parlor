@@ -13,9 +13,21 @@
 <body>
     <h1>D'Angelo's Pizza</h1>
 
+    <h3>Size</h3>
+    <form>
+        <input type="radio" id="personal" name="pizzaSize" value="personal">
+        <label for="personal">Personal</label>
+        <input type="radio" id="medium" name="pizzaSize" value="medium">
+        <label for="medium">Medium</label>
+        <input type="radio" id="large" name="pizzaSize" value="large">
+        <label for="large">Large</label>
+        <input type="radio" id="family" name="pizzaSize" value="family">
+        <label for="family">Family</label>
+    </form>
+
     <h3>Toppings</h3>
     <form>
-        <input type="checkbox" id="pepperoni" name="topping1" value="pepperoni">
+        <input type="checkbox" class="toppingInput" id="pepperoni" name="topping1" value="pepperoni">
         <label for="topping1">Pepperoni</label>
         <input type="checkbox" id="sausage" name="topping2" value="sausage">
         <label for="topping2">Sausage</label>
@@ -35,17 +47,6 @@
         <label for="topping1">Pepperoni</label>
     </form>
 
-    <h3>Size</h3>
-    <form>
-        <input type="radio" id="personal" name="pizzaSize" value="personal">
-        <label for="personal">Personal</label><br>
-        <input type="radio" id="medium" name="pizzaSize" value="medium">
-        <label for="medium">Medium</label><br>
-        <input type="radio" id="large" name="pizzaSize" value="large">
-        <label for="large">Large</label>
-        <input type="radio" id="family" name="pizzaSize" value="family">
-        <label for="family">Family</label>
-    </form>
 </body>
 
 </html>

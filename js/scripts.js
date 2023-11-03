@@ -34,7 +34,23 @@ Pizza.prototype.pizzaPrice = function () {
 
 //UI Logic
 
+function showSizePrice() {
 
+}
+
+function showToppingPrice() {
+
+}
+
+function showTotal() {
+
+}
+
+window.addEventListener("load", function () {
+    document.querySelector(".toppingInput").addEventListener("click", showToppingPrice);
+    document.querySelector(".sizeInput").addEventListener("click", showToppingPrice);
+    //     document.querySelector(".toppingInput").addEventListener("click", showToppingPrice);
+});
 
 
 

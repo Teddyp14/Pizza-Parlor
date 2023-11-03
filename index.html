@@ -14,7 +14,7 @@
     <h1>D'Angelo's Pizza</h1>
 
     <h3>Size</h3>
-    <form>
+    <form id="pizzaOrder">
         <input type="radio" class="sizeInput" id="personal" name="pizzaSize" value="personal">
         <label for="personal">Personal</label>
         <input type="radio" class="sizeInput" id="medium" name="pizzaSize" value="medium">
@@ -23,10 +23,9 @@
         <label for="large">Large</label>
         <input type="radio" class="sizeInput" id="family" name="pizzaSize" value="family">
         <label for="family">Family</label>
-    </form>
 
-    <h3>Toppings</h3>
-    <form>
+        <h3>Toppings</h3>
+
         <input type="checkbox" class="toppingInput" id="pepperoni" name="topping1" value="pepperoni">
         <label for="topping1">Pepperoni</label>
         <input type="checkbox" class="toppingInput" id="sausage" name="topping2" value="sausage">
@@ -45,11 +44,12 @@
         <label for="topping8">Onions</label>
         <input type="checkbox" class="toppingInput" id="pepperoni" name="topping1" value="pepperoni">
         <label for="topping1">Pepperoni</label>
+        <button type="submit">Proceed to checkout!</button>
     </form>
 
     <div class="sizePrice"></div>
     <div class="toppingPrice"></div>
-
+    <div class="totalPrice"></div>
 </body>
 
 </html>

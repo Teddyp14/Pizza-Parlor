@@ -29,7 +29,6 @@ Pizza.prototype.calculateToppingPrice = function () {
     }
 
     return price;
-
 };
 
 Pizza.prototype.pizzaPrice = function () {
@@ -49,7 +48,6 @@ function getSize() {
 
 
 function showSizePrice() {
-
     const sizePrice = document.querySelector("div.sizePrice");
     const sizePriceDisplay = document.createElement("h3");
 
@@ -58,6 +56,7 @@ function showSizePrice() {
     sizePrice.innerText = null;
     sizePriceDisplay.append("$" + userPizza.calculateSizePrice());
     sizePrice.append(sizePriceDisplay);
+    showTotal();
 }
 
 
@@ -79,22 +78,23 @@ function showToppingPrice() {
     toppingPrice.innerText = null;
     toppingPriceDisplay.append("+ $" + userPizza.calculateToppingPrice());
     toppingPrice.append(toppingPriceDisplay);
-
+    showTotal();
 }
 
-function showTotal(event) {
-    event.preventDefault();
+function showTotal() {
+    // event.preventDefault();
 
     const totalPrice = document.querySelector("div.totalPrice");
     const totalPriceDisplay = document.createElement("h3");
 
     totalPrice.innerText = null;
-    totalPriceDisplay.append("$" + userPizza.pizzaPrice());
+    totalPriceDisplay.append("Total: $" + userPizza.pizzaPrice());
     totalPrice.append(totalPriceDisplay);
 }
 
 window.addEventListener("load", function () {
     document.querySelector("form#pizzaOrder").addEventListener("submit", showTotal);
+
     const sizeInputs = document.querySelectorAll("input.sizeInput");
     const toppingInputs = document.querySelectorAll("input.toppingInput");
 

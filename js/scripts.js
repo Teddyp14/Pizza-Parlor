@@ -5,7 +5,7 @@ function Pizza(size, toppings) {
     this.toppings = toppings;
 }
 
-Pizza.prototype.sizePrice = function () {
+Pizza.prototype.calculateSizePrice = function () {
     let price;
 
     if (this.size === "personal") {
@@ -21,7 +21,7 @@ Pizza.prototype.sizePrice = function () {
     return price;
 }
 
-Pizza.prototype.toppingPrice = function () {
+Pizza.prototype.calculateToppingPrice = function () {
     let price = this.toppings.length * 2;
     return price;
 }
@@ -35,15 +35,28 @@ Pizza.prototype.pizzaPrice = function () {
 //UI Logic
 let userPizza = new Pizza("", [])
 
-
-function showSizePrice() {
+function getSize() {
     const chosenSize = document.querySelector("input[name='pizzaSize']:checked").value;
     userPizza.size = chosenSize;
 
     console.log(userPizza.size)
+}
 
+
+function showSizePrice() {
+
+    const sizePrice = document.querySelector("div.sizePrice");
     const sizePriceDisplay = document.createElement("h3");
-    sizePriceDisplay.append(userPizza.sizePrice());
+
+    getSizePrice();
+
+    sizePrice.innerText = null;
+    sizePriceDisplay.append("$" + userPizza.calculateSizePrice());
+    sizePrice.append(sizePriceDisplay);
+}
+
+function getToppings() {
+    const toppingChoice = document.querySelectorAll("input.toppingInput");
 }
 
 function showToppingPrice() {

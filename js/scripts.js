@@ -22,9 +22,12 @@ Pizza.prototype.calculateSizePrice = function () {
 }
 
 Pizza.prototype.calculateToppingPrice = function () {
-    let price = this.toppings.length * 2;
+    let price;
+    for (toppings of this.toppings) {
+        price += 2;
+    }
     return price;
-}
+};
 
 Pizza.prototype.pizzaPrice = function () {
     const totalPrice = this.sizePrice() + this.toppingPrice();
@@ -55,12 +58,29 @@ function showSizePrice() {
     sizePrice.append(sizePriceDisplay);
 }
 
-function getToppings() {
-    const toppingChoice = document.querySelectorAll("input.toppingInput");
+// function getToppings() {
+//     const toppingCheckboxes = document.querySelectorAll("input[type='checkbox']:checked");
+//     const userToppings = [];
 
-    toppingChoice.forEach((input) => {
-        userPizza.toppings.push(input);
+//     toppingCheckboxes.forEach(function (topping) {
+//         userToppings.push(topping.value);
+
+//     });
+
+//     userPizza.toppings = userToppings;
+
+//     console.log(userPizza.toppings);
+// }
+
+function getToppings() {
+    const toppingChoice = document.querySelectorAll("input[type='checkbox']:checked");
+    userPizza.toppings = [];
+
+    toppingChoice.forEach(function (topping) {
+        userPizza.toppings.push(topping.value);
     });
+
+    console.log(userPizza.toppings);
 }
 
 function showToppingPrice() {

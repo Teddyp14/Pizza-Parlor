@@ -1,23 +1,38 @@
 body {
+    background-image: url(//previews.123rf.com/images/ilonitta/ilonitta1811/ilonitta181100157/127497253-vintage-flourishes-seamless-pattern-in-italian-style-for-wallpaper-scrapbooking-design-wrapping-gift.jpg);
+}
+
+h1 {
+    background-image: url(https://t4.ftcdn.net/jpg/02/61/06/43/360_F_261064393_GKNoZW2WGRlTMwBVYyM6SiCNYzteR3tY.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.contents {
     padding: 5%;
-    /* background-image: url(//previews.123rf.com/images/ilonitta/ilonitta1811/ilonitta181100157/127497253-vintage-flourishes-seamless-pattern-in-italian-style-for-wallpaper-scrapbooking-design-wrapping-gift.jpg); */
 }
 
 form {
     display: flex;
     flex-direction: column;
+    width: 40%;
+    padding: 5%;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .label-container {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    /* Add vertical spacing between radio button groups */
 }
 
 .label-container input {
     margin-right: 5px;
-    /* Add spacing between radio button and label text */
 }
 
 button {
@@ -25,10 +40,25 @@ button {
 }
 
 .sizePrice {
-    padding-left: 3%;
+    padding-top: 5%;
+    padding-left: 13%;
+}
+
+.toppingPrice {
+    padding-left: 5%;
 }
 
 .totalPrice {
-    width: 15%;
+    padding: 5%;
+    margin-left: 5%;
+    width: 40%;
     border-top: 3px solid black;
+}
+
+.pricingInfo {
+    background-color: white;
+    width: 40%;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin-top: 5%;
 }

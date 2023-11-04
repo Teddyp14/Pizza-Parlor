@@ -13,7 +13,7 @@
 
 ## Description
 
-This webpage allows the user to select a pizza size and any number of toppings from the list, and see the total price of the pizza dynamically change depending on their slections.
+This webpage allows the user to select a pizza size and any number of toppings from the list, and see the total price of the pizza dynamically change depending on their selections. The list of pizzas being order will be displayed to the order. 
 
 ## Setup/Installation Requirements
 
@@ -23,7 +23,7 @@ This webpage allows the user to select a pizza size and any number of toppings f
 
 ## Known Bugs
 
-* None known at the moment. 
+* The list of pizzas being order displays at the lower right of the screen. It should display to the right of the selection form. 
 
 ## License
 

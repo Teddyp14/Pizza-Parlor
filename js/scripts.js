@@ -51,6 +51,8 @@ function showSizePrice() {
     const sizePrice = document.querySelector("div.sizePrice");
     const sizePriceDisplay = document.createElement("h3");
 
+    document.querySelector("div#pricingInfo").removeAttribute("class", "hidden");
+
     getSize();
 
     sizePrice.innerText = null;
@@ -73,6 +75,8 @@ function showToppingPrice() {
     const toppingPrice = document.querySelector("div.toppingPrice");
     const toppingPriceDisplay = document.createElement("h3");
 
+    document.querySelector("div#pricingInfo").removeAttribute("class", "hidden");
+
     getToppings();
 
     toppingPrice.innerText = null;
@@ -94,20 +98,39 @@ function showTotal() {
 function addToOrder() {
     event.preventDefault();
 
+    document.querySelector("div#totalOrder").removeAttribute("class", "hidden");
+
     const totalOrder = document.querySelector("div#totalOrder");
+    const rollingTotal = document.querySelector("div#rollingTotal");
     const orderList = document.createElement("ul");
     const orderListItem = document.createElement("li");
     const userPizzaSize = userPizza.size.charAt(0).toUpperCase() + userPizza.size.slice(1);
+    const orderPrice = document.createElement("h3");
 
-    orderListItem.append(userPizzaSize + " pizza with " + (userPizza.toppings).join(", "));
+    if (typeof addToOrder.totalPrice === "undefined") {
+        addToOrder.totalPrice = 0;
+    }
+
+    orderListItem.append(userPizzaSize + " pizza with " + (userPizza.toppings).join(", ") + " - $" + userPizza.pizzaPrice());
     orderList.append(orderListItem);
     totalOrder.append(orderList);
+    addToOrder.totalPrice += userPizza.pizzaPrice();
+
+    const previousTotalPrice = document.querySelector("div#rollingTotal h3");
+    if (previousTotalPrice) {
+        rollingTotal.removeChild(previousTotalPrice);
+    }
+
+    orderPrice.append("Order total: $" + addToOrder.totalPrice);
+    rollingTotal.append(orderPrice);
 }
 
 window.addEventListener("load", function () {
 
     const sizeInputs = document.querySelectorAll("input.sizeInput");
     const toppingInputs = document.querySelectorAll("input.toppingInput");
+    document.querySelector("div#totalOrder").setAttribute("class", "hidden");
+    document.querySelector("div#pricingInfo").setAttribute("class", "hidden");
 
     sizeInputs.forEach((input) => {
         input.addEventListener("click", showSizePrice);

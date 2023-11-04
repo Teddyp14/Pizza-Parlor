@@ -6,9 +6,10 @@ h1 {
     background-image: url(https://t4.ftcdn.net/jpg/02/61/06/43/360_F_261064393_GKNoZW2WGRlTMwBVYyM6SiCNYzteR3tY.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 10%;
+    padding: 5%;
     text-align: center;
-    font-size: 50px;
+    font-family: 'Oleo Script';
+    font-size: 100px;
 }
 
 .contents {

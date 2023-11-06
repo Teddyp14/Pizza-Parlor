@@ -13,7 +13,7 @@
 
 ## Description
 
-This webpage allows the user to select a pizza size and any number of toppings from the list, and see the total price of the pizza dynamically change depending on their selections. The list of pizzas being order will be displayed to the order. 
+This webpage allows the user to select a pizza size and any number of toppings from the list, and see the total price of the pizza dynamically change depending on their selections. The list of pizzas being ordered will be displayed to the user. 
 
 ## Setup/Installation Requirements
 
@@ -23,7 +23,7 @@ This webpage allows the user to select a pizza size and any number of toppings f
 
 ## Known Bugs
 
-* The list of pizzas being order displays at the lower right of the screen. It should display to the right of the selection form. 
+* Unknown at this time. 
 
 ## License
 
@@ -51,26 +51,26 @@ SOFTWARE
 
 ## Business Logic Tests: 
 
-Describe: Pizza()
+####Describe: Pizza()
 
-Test: "It should return a pizza object with properties for toppings and size" 
-Code: const newPizza = new Pizza(["pepperoni", "olives", "mushrooms"], "large");
+Test: "It should return a pizza object with properties for toppings and size"\ 
+Code: const newPizza = new Pizza(["pepperoni", "olives", "mushrooms"], "large");\
 Expected output: Pizza {toppings: ["pepperoni", "olives", "mushrooms"], size: "large" }
 
-Describe: Pizza.prototype.sizePrice()
+####Describe: Pizza.prototype.sizePrice()
 
-Test: "It should determine the price of the pizza based only on the size."
-Code: newPizza.sizePrice();
+Test: "It should determine the price of the pizza based only on the size."\
+Code: newPizza.sizePrice();\
 Expected output: 10
 
-Describe: Pizza.prototype.toppingPrice()
+####Describe: Pizza.prototype.toppingPrice()
 
-Test: "It should determine the additional cost of the pizza based on the number of toppings."
-Code: newPizza.toppingPrice();
+Test: "It should determine the additional cost of the pizza based on the number of toppings."\
+Code: newPizza.toppingPrice();\
 Expected output: 6
 
-Describe: Pizza.prototype.pizzaPrice()
+####Describe: Pizza.prototype.pizzaPrice()
 
-Test: "It should return a price based upon the number of toppings and size of the pizza selected by the user."
-Code: const pizzaPrice = newPizza.pizzaPrice();
+Test: "It should return a price based upon the number of toppings and size of the pizza selected by the user."\
+Code: const pizzaPrice = newPizza.pizzaPrice();\
 Expected output: 16

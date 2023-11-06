@@ -89,40 +89,50 @@ function showTotal() {
 
     const totalPrice = document.querySelector("div.totalPrice");
     const totalPriceDisplay = document.createElement("h3");
+    const noSizeChosen = document.createElement("h4");
 
     totalPrice.innerText = null;
-    totalPriceDisplay.append("Total: $" + userPizza.pizzaPrice());
-    totalPrice.append(totalPriceDisplay);
+    if (userPizza.pizzaPrice()) {
+        totalPriceDisplay.append("Total: $" + userPizza.pizzaPrice());
+        totalPrice.append(totalPriceDisplay);
+    } else {
+        noSizeChosen.append("Please choose a size!");
+        totalPrice.append(noSizeChosen);
+    }
 }
 
 function addToOrder() {
     event.preventDefault();
 
-    document.querySelector("div#totalOrder").removeAttribute("class", "hidden");
+    const totalPrice = document.querySelector("div.totalPrice");
 
-    const totalOrder = document.querySelector("div#totalOrder");
-    const rollingTotal = document.querySelector("div#rollingTotal");
-    const orderList = document.createElement("ul");
-    const orderListItem = document.createElement("li");
-    const userPizzaSize = userPizza.size.charAt(0).toUpperCase() + userPizza.size.slice(1);
-    const orderPrice = document.createElement("h3");
+    if (totalPrice.innerText !== "Please choose a size!") {
+        document.querySelector("div#totalOrder").removeAttribute("class", "hidden");
 
-    if (typeof addToOrder.totalPrice === "undefined") {
-        addToOrder.totalPrice = 0;
+        const totalOrder = document.querySelector("div#totalOrder");
+        const rollingTotal = document.querySelector("div#rollingTotal");
+        const orderList = document.createElement("ul");
+        const orderListItem = document.createElement("li");
+        const userPizzaSize = userPizza.size.charAt(0).toUpperCase() + userPizza.size.slice(1);
+        const orderPrice = document.createElement("h3");
+
+        if (typeof addToOrder.totalPrice === "undefined") {
+            addToOrder.totalPrice = 0;
+        }
+
+        orderListItem.append(userPizzaSize + " pizza with " + (userPizza.toppings).join(", ") + " - $" + userPizza.pizzaPrice());
+        orderList.append(orderListItem);
+        totalOrder.append(orderList);
+        addToOrder.totalPrice += userPizza.pizzaPrice();
+
+        const previousTotalPrice = document.querySelector("div#rollingTotal h3");
+        if (previousTotalPrice) {
+            rollingTotal.removeChild(previousTotalPrice);
+        }
+
+        orderPrice.append("Order total: $" + addToOrder.totalPrice);
+        rollingTotal.append(orderPrice);
     }
-
-    orderListItem.append(userPizzaSize + " pizza with " + (userPizza.toppings).join(", ") + " - $" + userPizza.pizzaPrice());
-    orderList.append(orderListItem);
-    totalOrder.append(orderList);
-    addToOrder.totalPrice += userPizza.pizzaPrice();
-
-    const previousTotalPrice = document.querySelector("div#rollingTotal h3");
-    if (previousTotalPrice) {
-        rollingTotal.removeChild(previousTotalPrice);
-    }
-
-    orderPrice.append("Order total: $" + addToOrder.totalPrice);
-    rollingTotal.append(orderPrice);
 }
 
 window.addEventListener("load", function () {

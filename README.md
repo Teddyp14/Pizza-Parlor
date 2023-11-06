@@ -57,13 +57,13 @@ Test: "It should return a pizza object with properties for toppings and size"\
 Code: const newPizza = new Pizza(["pepperoni", "olives", "mushrooms"], "large");\
 Expected output: Pizza {toppings: ["pepperoni", "olives", "mushrooms"], size: "large" }
 
-#### Describe: Pizza.prototype.sizePrice()
+#### Describe: Pizza.prototype.calculateSizePrice()
 
 Test: "It should determine the price of the pizza based only on the size."\
 Code: newPizza.sizePrice();\
 Expected output: 10
 
-#### Describe: Pizza.prototype.toppingPrice()
+#### Describe: Pizza.prototype.calculateToppingPrice()
 
 Test: "It should determine the additional cost of the pizza based on the number of toppings."\
 Code: newPizza.toppingPrice();\
